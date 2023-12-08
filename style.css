@@ -1,0 +1,148 @@
+@font-face {
+  font-family: 'TTLakes-Regular'; 
+  src: url(fonts/TTLakes-Regular.woff) format('woff');
+}
+@font-face {
+  font-family: 'TTLakes-Medium'; 
+  src: url(fonts/TTLakes-Medium.woff) format('woff');
+}
+@font-face {
+  font-family: 'TTLakes-Bold'; 
+  src: url(fonts/TTLakes-Bold.woff) format('woff');
+}
+
+* { 
+  max-width: 1120px;
+  font-family: TTLakes-Regular;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 1120px;
+  display: flex;
+  background-color: #F8F8F8;
+}
+
+.brands {
+  display: block;
+  position: relative;
+}
+
+.brands__title {
+  display: block;
+  padding: 20px;
+  color: #7E7E82;
+  font-size: 16px;
+  background: linear-gradient(to right, #F8F8F8, #FFFFFF);
+  margin-left: 20px;
+  border-top: #D9FFF5 1px solid;
+}
+
+.brands button {
+  border: none;
+  background-color: #F8F8F8;
+  margin-left: 50px;
+  margin-top: 30px;
+  font-family: TTLakes-Medium;
+}
+
+.brands button img {
+  margin-right: 10px;
+}
+
+.brands__logos {
+  display: flex;
+  flex: 0 0 0 25%; 
+  box-sizing: border-box; 
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 1120px;
+  margin: 30px;
+  margin-bottom: 0px;
+}
+
+.brands__logos__hidden {
+  display: none;
+}
+
+.brands__logos div {
+  margin: 10px;
+}
+
+.show-all {
+  position: absolute;
+  top: 270px;
+}
+
+@media screen and (min-width: 431px) and (max-width: 768px) {
+
+html {
+  max-width: 768px;
+}
+
+  .brands__logos__hidden {
+    display: none;
+  }
+
+  .logo-hidden {
+  }
+
+
+ .brands__logos div:nth-child(7),
+.brands__logos div:nth-child(8) {
+  display: none;
+ }
+
+  .brands__logos {
+    display: flex;
+    box-sizing: border-box; 
+    max-width: max-content;
+    justify-content: space-between;
+  }
+  
+  .swiper-slide {
+    display: flex;
+  }
+
+  .brands__logos div {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 31%;
+  }
+
+  .show-all {
+    position: absolute;
+    top: 320px;
+  }
+
+}
+
+@media screen and (max-width: 430px) {
+
+ 
+  .brands__logos {
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+}
+
+.brands__logos div {
+    flex: 0 0 auto; 
+    width: auto; 
+    margin-right: 10px; 
+}
+
+.show-all {
+  display: none;
+}
+
+
+
+
+
+
+
+
+}

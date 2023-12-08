@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (max-width: 430px)" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="brands">
+        <div class="brands__title">РЕМОНТ ТЕХНИКИ РАЗЛИЧНЫХ БРЕНДОВ</div>
+        <div class="swiper">
+            <div class="brands__logos swiper-wrapper">
+                <div class="swiper-slide"><img src="ic/cat1.svg" alt="" class="logo"></div>
+                <div class="swiper-slide"><img src="ic/cat2.svg" alt="" class="logo"></div>
+                <div class="swiper-slide"><img src="ic/cat3.svg" alt="" class="logo"></div>
+                <div class="swiper-slide"><img src="ic/cat7.svg" alt="" class="logo"></div>
+                <div class="swiper-slide"><img src="ic/cat5.svg" alt="" class="logo"></div>
+                <div class="swiper-slide"><img src="ic/cat6.svg" alt="" class="logo"></div>
+                <div class="swiper-slide"><img class="logo" class="logo-hidden" src="ic/cat7.svg" alt=""></div>
+                <div class="swiper-slide"><img class="logo" class="logo-hidden" src="ic/cat8.svg" alt=""></div>
+                <div class="swiper-slide"><img class="brands__logos__hidden" src="ic/cat5.svg" alt="" class="logo"></div>
+                <div class="swiper-slide"><img class="brands__logos__hidden" src="ic/cat6.svg" alt="" class="logo"></div>
+                <div class="swiper-slide"><img class="brands__logos__hidden" src="ic/cat7.svg" alt="" class="logo"></div>
+            </div>  
+            <div class="swiper-pagination"></div>
+        </div>
+        <button id="btn_show" class="show-all"><img src="ic/icon.svg" class="dropdown" alt="">Показать все</button>
+    </section>
+
+<!-- <script>
+    const toggleBtn = document.getElementById("btn_show");
+
+    toggleBtn.addEventListener('click', () => {
+        console.log("Clicked....111", (toggleBtn.innerText).trim()=== 'Показать все');
+        console.log("Clicked....222", toggleBtn.innerText);
+        const brands = window.innerWidth < 1120
+            ? document.querySelectorAll('.logo')
+            : document.querySelectorAll('.brands__logos__hidden');
+
+        if ((toggleBtn.innerText).trim() === 'Показать все') {
+            brands.forEach(brand => brand.style.display = 'flex');
+            toggleBtn.innerText = 'Скрыть';
+            toggleBtn.style.transform = 'rotate(180deg)';
+        } else if (toggleBtn.innerText === 'Скрыть') {
+            brands.forEach(brand => brand.style.display = 'none');
+            toggleBtn.innerText = 'Показать все';
+        }
+    });
+</script>-->
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById("btn_show");
+    const dropdown = document.getElementsByClassName("dropdown");
+    
+    toggleBtn.addEventListener('click', () => {
+        const buttonText = toggleBtn.innerText.trim();
+        const brands = window.innerWidth < 1120
+            ? document.querySelectorAll('.logo')
+            : document.querySelectorAll('.brands__logos__hidden');
+
+        if (buttonText === 'Показать все') {
+            brands.forEach(brand => brand.style.display = 'flex');
+            toggleBtn.style.marginTop = '130px';
+            toggleBtn.innerText = 'Скрыть';
+            dropdown.style.display = 'block';
+            dropdown.style.transform = 'rotate(180dg)';
+        } else if (buttonText === 'Скрыть') {
+            brands.forEach(brand => brand.style.display = 'none');
+            toggleBtn.innerText = 'Показать все';
+            toggleBtn.style.marginTop = '30px';
+            toggleBtn.style.transform = ''; 
+        }
+    });
+});
+
+</script>
+
+
+<script>
+    export const swiper = new Swiper(".mySwiper", {
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
+    clickable: "true",
+  },
+  breakpoints : {
+    320: {
+      slidesPerView: 'auto',
+    },
+  }
+});
+
+
+</script>
+
+
+</body>
+</html>

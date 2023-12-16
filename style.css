@@ -11,6 +11,8 @@
   src: url(fonts/TTLakes-Bold.woff) format('woff');
 }
 
+
+
 * { 
   max-width: 1120px;
   font-family: TTLakes-Regular;
@@ -38,6 +40,7 @@ body {
   background: linear-gradient(to right, #F8F8F8, #FFFFFF);
   margin-left: 20px;
   border-top: #D9FFF5 1px solid;
+  font-family: TTLakes-Medium;
 }
 
 .brands button {
@@ -72,77 +75,82 @@ body {
 }
 
 .show-all {
+  display: flex;
   position: absolute;
   top: 270px;
 }
 
+.arrow {
+  display: flex;
+}
+
+
 @media screen and (min-width: 431px) and (max-width: 768px) {
 
-html {
-  max-width: 768px;
-}
-
-  .brands__logos__hidden {
-    display: none;
-  }
-
-  .logo-hidden {
-  }
-
-
- .brands__logos div:nth-child(7),
-.brands__logos div:nth-child(8) {
-  display: none;
- }
-
-  .brands__logos {
-    display: flex;
-    box-sizing: border-box; 
-    max-width: max-content;
-    justify-content: space-between;
+  html {
+    max-width: 768px;
   }
   
-  .swiper-slide {
-    display: flex;
+    .brands__logos__hidden {
+      display: none;
+    }
+  
+    .logo-hidden {
+    }
+  
+  
+   .brands__logos div:nth-child(7),
+  .brands__logos div:nth-child(8) {
+    display: none;
+   }
+  
+    .brands__logos {
+      display: flex;
+      box-sizing: border-box; 
+      max-width: max-content;
+      justify-content: space-between;
+    }
+    
+    .swiper-slide {
+      display: flex;
+    }
+  
+    .brands__logos div {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 31%;
+    }
+  
+    .show-all {
+      position: absolute;
+      top: 320px;
+    }
+  
   }
 
+  @media screen and (max-width: 430px) {
+
+
+* {
+  max-width: 430px;
+}
+
+    .brands__logos {
+      display: flex;
+      flex-wrap: nowrap; 
+      overflow-x: auto; 
+  }
+  
   .brands__logos div {
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 31%;
-  }
+      flex: 0 0 auto; 
+      width: auto;
+      margin-right: 10px; 
 
+  }
+  
   .show-all {
-    position: absolute;
-    top: 320px;
+    display: none;
   }
-
-}
-
-@media screen and (max-width: 430px) {
-
- 
-  .brands__logos {
-    display: flex;
-    flex-wrap: nowrap; 
-    overflow-x: auto; 
-}
-
-.brands__logos div {
-    flex: 0 0 auto; 
-    width: auto; 
-    margin-right: 10px; 
-}
-
-.show-all {
-  display: none;
-}
-
-
-
-
-
-
-
-
-}
+  }
+  
+  

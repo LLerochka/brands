@@ -26,34 +26,14 @@
             </div>  
             <div class="swiper-pagination"></div>
         </div>
-        <button id="btn_show" class="show-all"><img src="ic/icon.svg" class="dropdown" alt="">Показать все</button>
+        <button id="btn_show" class="show-all"><img src="ic/icon.svg" class="arrow" alt="">Показать все</button>
     </section>
 
-<!-- <script>
-    const toggleBtn = document.getElementById("btn_show");
-
-    toggleBtn.addEventListener('click', () => {
-        console.log("Clicked....111", (toggleBtn.innerText).trim()=== 'Показать все');
-        console.log("Clicked....222", toggleBtn.innerText);
-        const brands = window.innerWidth < 1120
-            ? document.querySelectorAll('.logo')
-            : document.querySelectorAll('.brands__logos__hidden');
-
-        if ((toggleBtn.innerText).trim() === 'Показать все') {
-            brands.forEach(brand => brand.style.display = 'flex');
-            toggleBtn.innerText = 'Скрыть';
-            toggleBtn.style.transform = 'rotate(180deg)';
-        } else if (toggleBtn.innerText === 'Скрыть') {
-            brands.forEach(brand => brand.style.display = 'none');
-            toggleBtn.innerText = 'Показать все';
-        }
-    });
-</script>-->
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.getElementById("btn_show");
-    const dropdown = document.getElementsByClassName("dropdown");
+    const arrow = document.getElementsByClassName("arrow");
     
     toggleBtn.addEventListener('click', () => {
         const buttonText = toggleBtn.innerText.trim();
@@ -65,36 +45,35 @@ document.addEventListener('DOMContentLoaded', () => {
             brands.forEach(brand => brand.style.display = 'flex');
             toggleBtn.style.marginTop = '130px';
             toggleBtn.innerText = 'Скрыть';
-            dropdown.style.display = 'block';
-            dropdown.style.transform = 'rotate(180dg)';
+            arrow.style.display = 'inline';
+            arrow.style.transform = 'rotate(180deg)';
+            arrow.style.zIndex = '100';
         } else if (buttonText === 'Скрыть') {
             brands.forEach(brand => brand.style.display = 'none');
             toggleBtn.innerText = 'Показать все';
             toggleBtn.style.marginTop = '30px';
             toggleBtn.style.transform = ''; 
+            arrow.style.display = 'inline';
         }
     });
 });
 
-</script>
-
-
-<script>
-    export const swiper = new Swiper(".mySwiper", {
+const swiper = new Swiper(".swiper", {
   pagination: {
     el: ".swiper-pagination",
     type: "bullets",
-    clickable: "true",
+    clickable: true,
   },
-  breakpoints : {
+  breakpoints: {
     320: {
       slidesPerView: 'auto',
     },
   }
 });
-
-
 </script>
+
+
+
 
 
 </body>
